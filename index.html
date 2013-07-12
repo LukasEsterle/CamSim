@@ -22,44 +22,44 @@
 
 
         <ul>
-          <li><a href="https://github.com/LukasEsterle/CamSim/zipball/master">Download <strong>ZIP File</strong></a></li>
-          <li><a href="https://github.com/LukasEsterle/CamSim/tarball/master">Download <strong>TAR Ball</strong></a></li>
-          <li><a href="https://github.com/LukasEsterle/CamSim">View On <strong>GitHub</strong></a></li>
+          <li><a href="https://github.com/EPiCS/CamSim/zipball/master">Download <strong>ZIP File</strong></a></li>
+          <li><a href="https://github.com/EPiCS/CamSim/tarball/master">Download <strong>TAR Ball</strong></a></li>
+          <li><a href="https://github.com/EPiCS/CamSim">View On <strong>GitHub</strong></a></li>
         </ul>
       </header>
       <section>
         <h3>
-<a name="welcome-to-github-pages" class="anchor" href="#welcome-to-github-pages"><span class="octicon octicon-link"></span></a>Welcome to GitHub Pages.</h3>
+<a name="welcome-to-github-pages" class="anchor" href="#welcome-to-github-pages"><span class="octicon octicon-link"></span></a>Welcome to CamSim.</h3>
 
-<p>This automatic page generator is the easiest way to create beautiful pages for all of your projects. Author your page content here using GitHub Flavored Markdown, select a template crafted by a designer, and publish. After your page is generated, you can check out the new branch:</p>
+<p>Smart Camera Simulation Environment
 
-<pre><code>$ cd your_repo_root/repo_name
-$ git fetch origin
-$ git checkout gh-pages
-</code></pre>
+CamSim is a simple 2D simulation environment for smart-camera networks. 
+Smart-cameras are implemented as self-interested agents able to work collectively towards specific goals. 
+Our simulation environment allows you to concentrate on your algorithms for self-adaptation and self-organisation of the cameras within the network instead of spending time and money on setting up a real camera network. 
+Furthermore, relaxing various problems of computer vision and network communication allows to focus on algorithms that really matter to you.</p>
 
-<p>If you're using the GitHub for Mac, simply sync your repository and you'll see the new branch.</p>
-
-<h3>
-<a name="designer-templates" class="anchor" href="#designer-templates"><span class="octicon octicon-link"></span></a>Designer Templates</h3>
-
-<p>We've crafted some handsome templates for you to use. Go ahead and continue to layouts to browse through them. You can easily go back to edit your page before publishing. After publishing your page, you can revisit the page generator and switch to another theme. Your Page content will be preserved if it remained markdown format.</p>
 
 <h3>
-<a name="rather-drive-stick" class="anchor" href="#rather-drive-stick"><span class="octicon octicon-link"></span></a>Rather Drive Stick?</h3>
+<a name="designer-templates" class="anchor" href="#designer-templates"><span class="octicon octicon-link"></span></a>Running Experiments</h3>
 
-<p>If you prefer to not use the automatic generator, push a branch named <code>gh-pages</code> to your repository to create a page manually. In addition to supporting regular HTML content, GitHub Pages support Jekyll, a simple, blog aware static site generator written by our own Tom Preston-Werner. Jekyll makes it easy to create site-wide headers and footers without having to copy them across every page. It also offers intelligent blog support and other advanced templating features.</p>
+<p>Running Experiments
 
-<h3>
-<a name="authors-and-contributors" class="anchor" href="#authors-and-contributors"><span class="octicon octicon-link"></span></a>Authors and Contributors</h3>
+The <code>runSim.sh</code> script is used to run experiments in the simulator. This takes a directory containing scenarios and writes the results in a special csv format to a results directory.
 
-<p>You can <a href="https://github.com/blog/821" class="user-mention">@mention</a> a GitHub username to generate a link to their profile. The resulting <code>&lt;a&gt;</code> element will link to the contributor's GitHub Profile. For example: In 2007, Chris Wanstrath (<a href="https://github.com/defunkt" class="user-mention">@defunkt</a>), PJ Hyett (<a href="https://github.com/pjhyett" class="user-mention">@pjhyett</a>), and Tom Preston-Werner (<a href="https://github.com/mojombo" class="user-mention">@mojombo</a>) founded GitHub.</p>
+Usage is as follows:
 
-<h3>
-<a name="support-or-contact" class="anchor" href="#support-or-contact"><span class="octicon octicon-link"></span></a>Support or Contact</h3>
+<code>./runSim.sh ./myscenarios ./myresults</code>
 
-<p>Having trouble with Pages? Check out the documentation at <a href="http://help.github.com/pages">http://help.github.com/pages</a> or contact <a href="mailto:support@github.com">support@github.com</a> and we’ll help you sort it out.</p>
-      </section>
+This will take all scenario files in the myscenarios directory and run each scenario 30 times with the following parameters:
+
+Each communication policy (broadcast, smooth, step)
+Each auction schedule (active, passive)
+On each camera
+So for three cameras, the number of experiments run are 30 * 3 * 2 * 3.
+
+The './myresults' parameter has the date added to it in ddMMyyyy format, and the results will be found in this directory.</p>
+
+
       <footer>
         <p>This project is maintained by <a href="https://github.com/LukasEsterle">LukasEsterle</a></p>
         <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
